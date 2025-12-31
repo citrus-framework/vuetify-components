@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import type { SelectItem } from '../selects/Select.vue';
+import type { SelectItem } from '@/types';
 
 /**
  * 編集可能なセレクト
