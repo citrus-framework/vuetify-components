@@ -1,11 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-
-export type SelectItem = {
-    title: string,
-    value: string | number | undefined,
-    group: string,
-};
+import type { SelectItem } from '@/types';
 
 /**
  * カスタマイズされたセレクト

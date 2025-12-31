@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import { resolve } from 'path';
 import vuetify from "vite-plugin-vuetify";
+import dts from 'vite-plugin-dts';
 
 export default defineConfig({
   plugins: [
@@ -9,7 +10,17 @@ export default defineConfig({
     vuetify({
       autoImport: true,
     }),
+    dts({
+      insertTypesEntry: true,
+      copyDtsFiles: true,
+      outDir: 'dist',
+    }),
   ],
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, 'src'),
+    },
+  },
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),

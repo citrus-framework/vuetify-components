@@ -1,16 +1,25 @@
 {
   "name": "@citrus-framework/vuetify-components",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Reusable Vuetify components for Citrus Framework projects",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./styles": "./dist/vuetify-components.css",
+    "./scss": "./src/assets/scss/customized.scss"
+  },
   "files": [
-    "dist"
+    "dist",
+    "src/assets"
   ],
   "scripts": {
     "dev": "vite",
-    "build": "vite build && vue-tsc --emitDeclarationOnly",
+    "build": "vite build",
     "preview": "vite preview",
     "type-check": "vue-tsc --noEmit"
   },
