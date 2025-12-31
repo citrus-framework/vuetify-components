@@ -1,0 +1,60 @@
+<script setup lang="ts">
+import { computed } from 'vue';
+
+export type SelectItem = {
+    title: string,
+    value: string | number | undefined,
+    group: string,
+};
+
+/**
+ * カスタマイズされたセレクト
+ */
+const model = defineModel<string | number | undefined>({ required: true });
+type Props = {
+    items: SelectItem[],
+};
+const props = defineProps<Props>();
+
+// グループ毎にまとめる
+const groupedItems = computed(() => {
+    const result: {title: string, value: string | number | undefined, type: 'subheader' | 'item'}[] = [];
+    let lastGroup = '';
+
+    for (const item of props.items) {
+        const group = item.group ?? '';
+        if (group !== lastGroup) {
+            result.push({ type: 'subheader', title: group ?? '', value: undefined });
+            lastGroup = group;
+        }
+        result.push({ type: 'item', title: item.title, value: item.value });
+    }
+    return result;
+});
+</script>
+
+<template>
+    <v-select v-model="model"
+              density="compact"
+              hide-details
+              item-title="title"
+              item-value="value"
+              :items="groupedItems"
+              :list-props="{
+                  density: 'compact',
+                  bgColor:'rgb(var(--v-theme-surface-light))',
+                  baseColor:'rgb(var(--v-theme-surface))',
+              }"
+              variant="outlined">
+        <template #subheader="{ props: properties }">
+            <v-list-subheader v-bind="properties"  class="font-weight-bold text-decoration-underline bg-purple-darken-2" />
+        </template>
+        <template #item="{ props: properties }">
+            <v-list-item v-bind="properties" />
+        </template>
+    </v-select>
+</template>
+
+<style scoped lang="scss">
+
+</style>

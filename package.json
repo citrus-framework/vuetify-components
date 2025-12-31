@@ -1,0 +1,43 @@
+{
+  "name": "@citrus-framework/vuetify-components",
+  "version": "0.1.0",
+  "description": "Reusable Vuetify components for Citrus Framework projects",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && vue-tsc --emitDeclarationOnly",
+    "preview": "vite preview",
+    "type-check": "vue-tsc --noEmit"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "keywords": [
+    "vue",
+    "vuetify",
+    "components",
+    "citrus-framework"
+  ],
+  "author": "Citrus Framework",
+  "license": "MIT",
+  "peerDependencies": {
+    "vue": "^3.5.0",
+    "vuetify": "^3.10.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.3",
+    "@vitejs/plugin-vue": "^6.0.3",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.0",
+    "vite-plugin-dts": "^4.3.0",
+    "vite-plugin-vuetify": "^2.1.2",
+    "vue": "^3.5.15",
+    "vue-tsc": "^3.2.1",
+    "vuetify": "^3.10.7"
+  }
+}
