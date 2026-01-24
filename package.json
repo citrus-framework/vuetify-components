@@ -33,6 +33,10 @@
     "components",
     "citrus-framework"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/citrus-framework/vuetify-components"
+  },
   "author": "Citrus Framework",
   "license": "MIT",
   "peerDependencies": {
