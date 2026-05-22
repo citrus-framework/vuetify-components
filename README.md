@@ -109,7 +109,7 @@ GitHub Releases でリリースを作成すると、自動的に npmjs.com に�
 
 ```bash
 pnpm build
-pnpm publish --access public
+npm publish --access public
 ```
 
 ## ライセンス
