@@ -3,6 +3,7 @@
   "version": "0.1.1",
   "description": "Reusable Vuetify components for Citrus Framework projects",
   "type": "module",
+  "packageManager": "pnpm@11.1.2",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {

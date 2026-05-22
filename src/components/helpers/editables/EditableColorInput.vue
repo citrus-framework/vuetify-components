@@ -26,9 +26,9 @@ const text = computed(() => {
                    density="compact"
                    hide-details
                    mode="hex"
-                   pip-variant="tonal"
                    show-swatches
                    variant="outlined"
+                   pip-location="prepend-inner"
                    v-bind="$attrs"/>
     <v-chip v-if="!editable"
             :color="model"

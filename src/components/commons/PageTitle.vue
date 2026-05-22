@@ -6,11 +6,11 @@ const props = withDefaults(defineProps<Props>(), {});
 </script>
 
 <template>
-    <v-row class="py-4 border-b-sm">
-        <v-col class="text-h4" cols="20">
-            {{ props.title }}
+    <v-row class="py-1 border-b-sm">
+        <v-col cols="20">
+            <h4 class="text-h4 ma-0">{{ props.title }}</h4>
         </v-col>
-        <v-col class="text-h4 text-right" cols="20">
+        <v-col class="text-right" cols="20">
             <slot />
         </v-col>
     </v-row>

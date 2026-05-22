@@ -4,16 +4,6 @@ Citrus Framework プロジェクト用の再利用可能な Vuetify コンポー
 
 ## インストール
 
-### 1. .npmrc の設定
-
-プロジェクトのルートに `.npmrc` ファイルを作成（または追加）：
-
-```
-@citrus-framework:registry=https://npm.pkg.github.com
-```
-
-### 2. パッケージのインストール
-
 ```bash
 npm install @citrus-framework/vuetify-components
 ```
@@ -95,30 +85,31 @@ import type { SelectItem } from '@citrus-framework/vuetify-components';
 ### セットアップ
 
 ```bash
-npm install
+pnpm install
 ```
 
 ### ビルド
 
 ```bash
-npm run build
+pnpm build
 ```
 
 ### 型チェック
 
 ```bash
-npm run type-check
+pnpm type-check
 ```
 
 ## パッケージの公開
 
-GitHub Releases でリリースを作成すると、自動的に GitHub Packages に公開されます。
+GitHub Releases でリリースを作成すると、自動的に npmjs.com に公開されます。
+公開には GitHub Actions の `NPM_TOKEN` secret が必要です。
 
 または、手動で公開：
 
 ```bash
-npm run build
-npm publish
+pnpm build
+pnpm publish --access public
 ```
 
 ## ライセンス
