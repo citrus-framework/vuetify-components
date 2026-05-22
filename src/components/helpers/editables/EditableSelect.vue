@@ -9,9 +9,11 @@ const model = defineModel<string | number | undefined>({ required: true });
 type Props = {
     items: SelectItem[],
     editable?: boolean,
+    truncateLength?: number,
 };
 const props = withDefaults(defineProps<Props>(), {
     editable: true,
+    truncateLength: 32,
 });
 
 // グループ毎にまとめる
@@ -36,8 +38,8 @@ const title = computed(() => {
         return item.value === model.value;
     })?.title ?? '';
 
-    if (title.length > 32) {
-        return `${title.substring(0, 32)}...`;
+    if (props.truncateLength > 0 && title.length > props.truncateLength) {
+        return `${title.substring(0, props.truncateLength)}...`;
     }
     return title;
 });

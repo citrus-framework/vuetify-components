@@ -4,6 +4,34 @@
   --v-field-input-padding-bottom: 2px;
 }
 
+// Vuetify が明示している font-size を継承に戻し、.v-application の基準値を伝播させる
+// 見出しは text-h1〜text-h6 ユーティリティクラスで表現する
+.v-field,
+.v-list-item-title,
+.v-card-title,
+.v-card-subtitle,
+.v-card-text,
+.v-card-actions,
+.v-btn {
+  font-size: inherit;
+}
+
+// タイポグラフィユーティリティの font-size 再定義（12px ベース）
+// font-weight, line-height などは Vuetify デフォルトに委ねる
+.text-h1 { font-size: 34px; }
+.text-h2 { font-size: 28px; }
+.text-h3 { font-size: 24px; }
+.text-h4 { font-size: 20px; }
+.text-h5 { font-size: 16px; }
+.text-h6 { font-size: 14px; }
+
+// v-avatar
+.v-avatar.v-avatar--size-default {
+  --v-avatar-height: inherit;
+}
+
+
+
 // v-field
 .v-field {
   font-size: 12px;
@@ -20,8 +48,15 @@
   padding-inline-end: 8px;
 }
 
+// v-dialog
+.v-dialog .v-overlay__content .v-card .v-card-text,
+.v-dialog .v-overlay__content .v-card .v-btn
+{
+  font-size: 12px;
+}
+
 // v-list-item
-.v-list-item-title {
+.v-list-item {
   font-size: 12px;
 }
 .v-list-item__prepend > .v-icon ~ .v-list-item__spacer {
@@ -52,13 +87,12 @@
   padding: 0;
 
   + .v-row {
-    margin-top: 0px;
+    margin-top: 0;
   }
 
   .v-col {
     margin: 0;
     padding: 0;
-    line-height: 20px;
 
     .v-input {
       padding: 4px 0 4px 4px;

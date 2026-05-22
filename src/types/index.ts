@@ -1,3 +1,3 @@
-// 将来の型定義用
-// 例: export type { SomeType } from './SomeType';
+export type { LinkItem } from './LinkItem';
+export type { LinkMenuItem } from './LinkMenuItem';
 export type { SelectItem } from './SelectItem';
