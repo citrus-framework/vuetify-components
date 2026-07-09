@@ -32,8 +32,6 @@ const items = computed(() => {
                 :items="items"
                 :list-props="{
                     density: 'compact',
-                    bgColor:'rgb(var(--v-theme-surface-light))',
-                    baseColor:'rgb(var(--v-theme-surface))',
                 }"
                 variant="outlined"/>
 </template>

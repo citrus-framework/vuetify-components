@@ -33,9 +33,7 @@ const groupedItems = computed(() => {
     <v-btn append-icon="mdi-menu-down" density="default" variant="flat">
         {{ props.title }}
         <v-menu activator="parent" open-on-click>
-            <v-list base-color="rgb(var(--v-theme-surface))"
-                    bg-color="rgb(var(--v-theme-surface-light))"
-                    min-width="16em"
+            <v-list min-width="16em"
                     :items="groupedItems"
             >
                 <template #subheader="{ props: properties }">

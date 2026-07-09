@@ -14,8 +14,7 @@ const props = defineProps<Props>();
         <template #activator="{ props: activatorProps }">
             <v-btn v-bind="activatorProps" density="compact" icon="mdi-dots-horizontal" variant="text" />
         </template>
-        <v-list base-color="rgb(var(--v-theme-surface))"
-                bg-color="rgb(var(--v-theme-surface-light))">
+        <v-list density="compact">
             <v-list-item v-for="menu in props.menus"
                          :key="menu.title"
                          density="compact"
